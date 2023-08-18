@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList({ tasks}) {
+function TaskList({ tasks, onDelete }) {
   return (
     <div className="tasks">
       {tasks.map((task, index) => (
@@ -9,7 +9,7 @@ function TaskList({ tasks}) {
           key={index}
           text={task.text}
           category={task.category}
-          onDelete={() => {}}
+          onDelete={() => onDelete(index)}
         />
       ))}
     </div>
